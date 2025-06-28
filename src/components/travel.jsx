@@ -82,6 +82,12 @@ const Travel = () => {
 
 
 
+
+
+
+
+
+
       <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 py-12">
       
       {/* Top Section: Category and Title */}
@@ -103,146 +109,52 @@ const Travel = () => {
         </div>
       </div>
 
-      {/* Services Cards */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-        {/* Card 1 */}
-        <div className="flex flex-col items-center text-center space-y-3 px-2">
-          <img 
-            alt="Icon representing calculated weather with a cloud and sun" 
-            className="mx-auto" 
-            height="48" 
-            src="https://storage.googleapis.com/a1aa/image/84a1b0f8-f7aa-40de-5364-81bc659f12df.jpg" 
-            width="48" 
-          />
-          <h3 className="font-semibold text-sm text-[#1a254f]">Calculated Weather</h3>
-          <p className="text-xs text-[#7f8db0] leading-tight max-w-[160px]">
-            Built Wicket longer admire do barton vanity itself do in.
-          </p>
-        </div>
-        
-        {/* Card 2 (Highlighted) */}
-        <div className="relative bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center space-y-3 z-10">
-          <div aria-hidden="true" className="absolute -left-6 -bottom-6 w-12 h-12 rounded-tr-3xl bg-[#d25a3f]"></div>
-          <img 
-            alt="Icon representing best flights with an airplane" 
-            className="mx-auto" 
-            height="48" 
-            src="https://storage.googleapis.com/a1aa/image/0b106e69-ac61-46d2-1627-a4fc3913b389.jpg" 
-            width="48" 
-          />
-          <h3 className="font-semibold text-sm text-[#1a254f]">Best Flights</h3>
-          <p className="text-xs text-[#7f8db0] leading-tight max-w-[160px]">
-            Engrossed listening. Park gate sell they west hard for.
-          </p>
-        </div>
-        
-        {/* Card 3 */}
-        <div className="flex flex-col items-center text-center space-y-3 px-2">
-          <img 
-            alt="Icon representing local events with a microphone" 
-            className="mx-auto" 
-            height="48" 
-            src="https://storage.googleapis.com/a1aa/image/c4fa29c8-4b3f-486e-cce3-a17066399ac1.jpg" 
-            width="48" 
-          />
-          <h3 className="font-semibold text-sm text-[#1a254f]">Local Events</h3>
-          <p className="text-xs text-[#7f8db0] leading-tight max-w-[160px]">
-            Barton vanity itself do in it. Preferred to men it engrossed listening.
-          </p>
-        </div>
-        
-        {/* Card 4 */}
-        <div className="flex flex-col items-center text-center space-y-3 px-2">
-          <img 
-            alt="Icon representing customization with a gear" 
-            className="mx-auto" 
-            height="48" 
-            src="https://storage.googleapis.com/a1aa/image/2d40d466-ef1c-447e-1cc4-c7ae66d1b1d8.jpg" 
-            width="48" 
-          />
-          <h3 className="font-semibold text-sm text-[#1a254f]">Customization</h3>
-          <p className="text-xs text-[#7f8db0] leading-tight max-w-[160px]">
-            We deliver outsourced aviation services for military customers.
-          </p>
-        </div>
-      </div>
+ <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+         {[
+           { title: "Calculated Weather", imgSrc: "https://storage.googleapis.com/a1aa/image/84a1b0f8-f7aa-40de-5364-81bc659f12df.jpg", description: "Built Wicket longer admire do barton vanity itself do in." },
+           { title: "Best Flights", imgSrc: "https://storage.googleapis.com/a1aa/image/0b106e69-ac61-46d2-1627-a4fc3913b389.jpg", description: "Engrossed listening. Park gate sell they west hard for." },
+           { title: "Local Events", imgSrc: "https://storage.googleapis.com/a1aa/image/c4fa29c8-4b3f-486e-cce3-a17066399ac1.jpg", description: "Barton vanity itself do in it. Preferred to men it engrossed listening." },
+           { title: "Customization", imgSrc: "https://storage.googleapis.com/a1aa/image/2d40d466-ef1c-447e-1cc4-c7ae66d1b1d8.jpg", description: "We deliver outsourced aviation services for military customers." },
+         ].map((service, index) => (
+           <div key={index} className="flex flex-col items-center text-center space-y-3 px-2">
+             <img alt={service.title} className="mx-auto" height="48" src={service.imgSrc} width="48" />
+             <h3 className="font-semibold text-sm text-[#1a254f]">{service.title}</h3>
+             <p className="text-xs text-[#7f8db0] leading-tight max-w-[160px]">{service.description}</p>
+           </div>
+         ))}
+       </div>
+
 
       {/* Top Destinations Section */}
-      <div className="max-w-4xl mx-auto mb-16 text-center">
-        <p className="text-xs font-semibold text-[#7f8db0] uppercase tracking-widest mb-2">Top Selling</p>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1a254f] mb-8">Top Destinations</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
-          {/* Destination 1 */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
-            <img 
-              alt="Photo of the Colosseum in Rome, Italy with blue sky and clouds" 
-              className="w-full h-40 object-cover" 
-              height="200" 
-              src="https://storage.googleapis.com/a1aa/image/121185b8-b080-42fc-3ba1-502e7ac75ba7.jpg" 
-              width="320" 
-            />
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-semibold text-sm text-[#1a254f]">Rome, Italy</h3>
-                <span className="text-xs font-semibold text-[#7f8db0]">$5.42k</span>
-              </div>
-              <div className="flex items-center text-xs text-[#7f8db0] space-x-1">
-                <i className="fas fa-plane"></i>
-                <span>10 Days Trip</span>
-              </div>
-            </div>
-          </div>
-          
-          {/* Destination 2 */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
-            <img 
-              alt="Photo of Big Ben clock tower in London, UK with autumn leaves" 
-              className="w-full h-40 object-cover" 
-              height="200" 
-              src="https://storage.googleapis.com/a1aa/image/74dc5bb0-c8b5-4f5f-a418-ac8b7199a607.jpg" 
-              width="320" 
-            />
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-semibold text-sm text-[#1a254f]">London, UK</h3>
-                <span className="text-xs font-semibold text-[#7f8db0]">$4.2k</span>
-              </div>
-              <div className="flex items-center text-xs text-[#7f8db0] space-x-1">
-                <i className="fas fa-plane"></i>
-                <span>12 Days Trip</span>
-              </div>
-            </div>
-          </div>
-          
-          {/* Destination 3 */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
-            <img 
-              alt="Photo of Helsinki cityscape, Finland with blue sky" 
-              className="w-full h-40 object-cover" 
-              height="200" 
-              src="https://storage.googleapis.com/a1aa/image/026d0ae7-ba68-4dfb-f62f-34fab580cd2c.jpg" 
-              width="320" 
-            />
-            <div className="p-4 relative">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-semibold text-sm text-[#1a254f]">Full Europe</h3>
-                <span className="text-xs font-semibold text-[#7f8db0]">$15k</span>
-              </div>
-              <div className="flex items-center text-xs text-[#7f8db0] space-x-1">
-                <i className="fas fa-plane"></i>
-                <span>28 Days Trip</span>
-              </div>
-              <img 
-                alt="Decorative scribble line on right side of card" 
-                className="absolute right-4 top-10 opacity-30 pointer-events-none select-none" 
-                height="40" 
-                src="https://storage.googleapis.com/a1aa/image/45609329-4b45-4a5f-f256-5a2e2a30977f.jpg" 
-                width="40" 
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+ <div className="max-w-4xl mx-auto mb-16 text-center">
+         <p className="text-xs font-semibold text-[#7f8db0] uppercase tracking-widest mb-2">Top Selling</p>
+         <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1a254f] mb-8">Top Destinations</h2>
+         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
+           {[
+             { title: "Rome, Italy", price: "$5.42k", days: "10 Days Trip", imgSrc: "https://storage.googleapis.com/a1aa/image/121185b8-b080-42fc-3ba1-502e7ac75ba7.jpg" },
+             { title: "London, UK", price: "$4.2k", days: "12 Days Trip", imgSrc: "https://storage.googleapis.com/a1aa/image/74dc5bb0-c8b5-4f5f-a418-ac8b7199a607.jpg" },
+             { title: "Full Europe", price: "$15k", days: "28 Days Trip", imgSrc: "https://storage.googleapis.com/a1aa/image/026d0ae7-ba68-4dfb-f62f-34fab580cd2c.jpg" },
+           ].map((destination, index) => (
+             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+               <img alt={destination.title} className="w-full h-40 object-cover" height="200" src={destination.imgSrc} width="320" />
+               <div className="p-4">
+                 <div className="flex justify-between items-center mb-2">
+                   <h3 className="font-semibold text-sm text-[#1a254f]">{destination.title}</h3>
+                   <span className="text-xs font-semibold text-[#7f8db0]">{destination.price}</span>
+                 </div>
+                 <div className="flex items-center text-xs text-[#7f8db0] space-x-1">
+                   <i className="fas fa-plane"></i>
+                   <span>{destination.days}</span>
+                 </div>
+               </div>
+             </div>
+           ))}
+         </div>
+       </div>
+
+
+
+       
 
       {/* Book Your Next Trip Section */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -293,72 +205,76 @@ const Travel = () => {
           </div>
         </div>
         {/* Right side image with overlay card */}
-        <div className="relative flex flex-col sm:flex-row gap-6 p-6">
-      {/* Blue radial glow behind cards */}
-      <div className="absolute w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#a3c5f7] to-transparent opacity-40 blur-[100px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 pointer-events-none"></div>
+<div className="relative flex flex-col sm:flex-row gap-6 p-6">
+  {/* Blue radial glow behind cards */}
+  <div className="absolute w-[480px] h-[480px] rounded-full bg-gradient-to-tr from-[#a3c5f7] to-transparent opacity-40 blur-[100px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 pointer-events-none"></div>
 
-      {/* Left card */}
-      <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(163,197,247,0.3)] max-w-[320px] w-full">
-        <img 
-          alt="Woman in red dress standing on white stairs with blue domed buildings and sea in Santorini Greece" 
-          className="rounded-t-3xl w-full h-[140px] object-cover" 
-          height="140" 
-          src="https://storage.googleapis.com/a1aa/image/3af34d3c-2f41-4206-6360-608891979a6b.jpg" 
-          width="320" 
-        />
-        <div className="p-5">
-          <h2 className="text-black text-lg font-semibold leading-6 mb-1">Trip To Greece</h2>
-          <div className="flex items-center text-gray-400 text-sm font-normal mb-4 space-x-2">
-            <span>14–29 June</span>
-            <span>|</span>
-            <span>by Robbin john</span>
-          </div>
-          <div className="flex space-x-3 mb-5">
-            <button aria-label="Leaf icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
-              <i className="fas fa-leaf"></i>
-            </button>
-            <button aria-label="Map icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
-              <i className="fas fa-map"></i>
-            </button>
-            <button aria-label="Paper plane icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
-              <i className="fas fa-paper-plane"></i>
-            </button>
-          </div>
-          <div className="flex items-center text-gray-500 text-sm font-normal space-x-2">
-            <i className="fas fa-users text-gray-400"></i>
-            <span>24 people going</span>
-          </div>
-        </div>
+  {/* Left card */}
+  <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(163,197,247,0.3)] max-w-[320px] w-full">
+    <img 
+      alt="Woman in red dress standing on white stairs with blue domed buildings and sea in Santorini Greece" 
+      className="rounded-t-3xl w-full h-[140px] object-cover" 
+      height="140" 
+      src="https://storage.googleapis.com/a1aa/image/3af34d3c-2f41-4206-6360-608891979a6b.jpg" 
+      width="320" 
+    />
+    <div className="p-5">
+      <h2 className="text-black text-lg font-semibold leading-6 mb-1">Trip To Greece</h2>
+      <div className="flex items-center text-gray-400 text-sm font-normal mb-4 space-x-2">
+        <span>14–29 June</span>
+        <span>|</span>
+        <span>by Robbin john</span>
       </div>
-
-      {/* Right card */}
-      <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(163,197,247,0.3)] max-w-[240px] w-full flex flex-col justify-between p-5 relative">
-        <div className="flex items-center space-x-3">
-          <img 
-            alt="View of Rome city with dome and buildings" 
-            className="w-10 h-10 rounded-full object-cover" 
-            height="40" 
-            src="https://storage.googleapis.com/a1aa/image/0e207137-7af5-4fab-8a5f-fd33175542fa.jpg" 
-            width="40" 
-          />
-          <div>
-            <p className="text-xs text-gray-400 font-normal">Ongoing</p>
-            <h3 className="text-black font-semibold text-base leading-5">Trip to rome</h3>
-          </div>
-        </div>
-        <div className="mt-4">
-          <p className="text-purple-700 text-sm font-semibold mb-1">
-            40%<span className="font-normal"> completed</span>
-          </p>
-          <div className="w-full h-1 rounded-full bg-gray-200">
-            <div className="h-1 rounded-full bg-purple-700" style={{ width: '40%' }}></div>
-          </div>
-        </div>
-        <button aria-label="Favorite heart" className="absolute bottom-4 right-4 text-gray-400 hover:text-purple-700 transition-colors">
-          <i className="far fa-heart text-lg"></i>
+      <div className="flex space-x-3 mb-5">
+        <button aria-label="Leaf icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
+          <i className="fas fa-leaf"></i>
+        </button>
+        <button aria-label="Map icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
+          <i className="fas fa-map"></i>
+        </button>
+        <button aria-label="Paper plane icon" className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
+          <i className="fas fa-paper-plane"></i>
         </button>
       </div>
+      <div className="flex items-center text-gray-500 text-sm font-normal space-x-2">
+        <i className="fas fa-users text-gray-400"></i>
+        <span>24 people going</span>
+      </div>
     </div>
+  </div>
+
+  {/* Right card */}
+  <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(163,197,247,0.3)] max-w-[300px] w-full flex flex-col justify-between p-5 relative z-10" style={{ height: '110px', position: 'absolute', top: '55%', right: '2%' }}>
+    <div className="flex items-center space-x-3">
+      <img 
+        alt="View of Rome city with dome and buildings" 
+        className="w-10 h-10 rounded-full object-cover" 
+        height="40" 
+        src="https://storage.googleapis.com/a1aa/image/0e207137-7af5-4fab-8a5f-fd33175542fa.jpg" 
+        width="40" 
+      />
+      <div>
+        <p className="text-xs text-gray-400 font-normal">Ongoing</p>
+        <h3 className="text-black font-semibold text-base leading-5">Trip to Rome</h3>
+      </div>
+    </div>
+    <div className="mt-2">
+      <p className="text-purple-700 text-sm font-semibold mb-1">
+        40%<span className="font-normal"> completed</span>
+      </p>
+      <div className="w-full h-1 rounded-full bg-gray-200">
+        <div className="h-1 rounded-full bg-purple-700" style={{ width: '40%' }}></div>
+      </div>
+    </div>
+    <button aria-label="Favorite heart" className="absolute bottom-4 right-4 text-gray-400 hover:text-purple-700 transition-colors">
+      <i className="far fa-heart text-lg"></i>
+    </button>
+  </div>
+</div>
+
+
+
+
       </div>
     </div>
 
@@ -370,56 +286,36 @@ const Travel = () => {
 <main className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 py-16">
       
       {/* Testimonials Section */}
-      <section className="md:flex md:items-start md:space-x-20 space-y-8 md:space-y-0">
-        <div className="md:w-1/3">
-          <p className="text-xs font-semibold text-gray-500 tracking-widest mb-2">TESTIMONIALS</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B1E40] leading-tight max-w-[280px] md:max-w-none">
-            What People Say<br />About Us.
-          </h2>
-          <div className="flex space-x-3 mt-6">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#0B1E40]"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
-          </div>
-        </div>
+ <section className="md:flex md:items-start md:space-x-20 space-y-8 md:space-y-0">
+         <div className="md:w-1/3">
+           <p className="text-xs font-semibold text-gray-500 tracking-widest mb-2">TESTIMONIALS</p>
+           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1E40] leading-tight max-w-[280px] md:max-w-none">
+             What People Say<br />About Us.
+           </h2>
+         </div>
+         <div className="md:w-2/3 space-y-6">
+           {[
+             { name: "Mike Taylor", location: "Lahore, Pakistan", text: "“On the Windows talking pointed posture yet its express porties use. Sure last upon he same as knew next. Of believed or diverted no.”", imgSrc: "https://storage.googleapis.com/a1aa/image/4019eebb-b46b-48f5-1daa-888901a41b93.jpg" },
+             { name: "Chris Thomas", location: "CEO of Red Button", text: "", imgSrc: "" },
+           ].map((testimonial, index) => (
+             <div key={index} className={`bg-white rounded-xl shadow-lg p-6 ${index === 0 ? 'relative z-20' : 'ml-4 md:ml-16 z-10'}`}>
+               <div className="flex items-start space-x-4">
+                 {testimonial.imgSrc && <img className="w-12 h-12 rounded-full object-cover" src={testimonial.imgSrc} alt={testimonial.name} />}
+                 <div>
+                   <p className="text-sm text-gray-600 italic">{testimonial.text}</p>
+                   {testimonial.name && <p className="mt-3 font-semibold text-[#0B1E40]">{testimonial.name}</p>}
+                   {testimonial.location && <p className="text-xs text-gray-400">{testimonial.location}</p>}
+                 </div>
+               </div>
+             </div>
+           ))}
+         </div>
+       </section>
 
-        {/* Testimonial Cards */}
-        <div className="md:w-2/3 space-y-6">
-          {/* Primary Testimonial */}
-          <div className="bg-white rounded-xl shadow-lg p-6 relative z-20">
-            <div className="flex items-start space-x-4">
-              <img
-                className="w-12 h-12 rounded-full object-cover"
-                src="https://storage.googleapis.com/a1aa/image/4019eebb-b46b-48f5-1daa-888901a41b93.jpg"
-                alt="Mike Taylor"
-              />
-              <div>
-                <p className="text-sm text-gray-600 italic">
-                  “On the Windows talking pointed posture yet its express porties use. Sure last upon he same as knew next. Of believed or diverted no.”
-                </p>
-                <p className="mt-3 font-semibold text-[#0B1E40]">Mike Taylor</p>
-                <p className="text-xs text-gray-400">Lahore, Pakistan</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Secondary Testimonial */}
-          <div className="bg-white rounded-xl shadow-md p-4 ml-4 md:ml-16 z-10">
-            <p className="text-sm font-semibold text-[#0B1E40]">Chris Thomas</p>
-            <p className="text-xs text-gray-400">CEO of Red Button</p>
-          </div>
 
-          {/* Navigation Arrows */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 transform flex flex-col space-y-4 text-gray-400 cursor-pointer">
-            <svg className="h-5 w-5 hover:text-[#0B1E40] transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M6 15l6-6 6 6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <svg className="h-5 w-5 hover:text-[#0B1E40] transition" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* Partner Logos */}
       <section className="mt-20 flex justify-center space-x-10 max-w-4xl mx-auto flex-wrap">
@@ -429,6 +325,8 @@ const Travel = () => {
         <img src="https://storage.googleapis.com/a1aa/image/db16b779-bb2b-49bc-0051-28e119ab09d9.jpg" alt="Qantas" className="object-contain" width="100" height="15" />
         <img src="https://storage.googleapis.com/a1aa/image/b5877f2f-daf4-486d-a202-d5ba40d59ad4.jpg" alt="Alitalia" className="object-contain" width="100" height="15" />
       </section>
+
+      
 
       {/* Newsletter Section */}
       <section className="mt-24 bg-[#F4F3FF] rounded-3xl relative max-w-4xl mx-auto px-8 py-12 flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8">
@@ -467,6 +365,13 @@ const Travel = () => {
           <circle cx="100" cy="100" r="50" strokeWidth="2" />
         </svg>
       </section>
+
+
+
+
+
+
+
 
       {/* Footer */}
       <footer className="mt-24 bg-[#F4F3FF] rounded-t-3xl py-12 px-8 max-w-7xl mx-auto">
